@@ -1,6 +1,6 @@
 class LocalStorageUtil {
     constructor() {
-        this.keyName = 'products';
+        this.keyName = "products";
     }
 
     getProducts() {
@@ -24,7 +24,7 @@ class LocalStorageUtil {
         }
 
         localStorage.setItem(this.keyName, JSON.stringify(products));
-        return { pushProduct, products };
+        return {pushProduct, products};
     }
 }
 

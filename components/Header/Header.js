@@ -1,10 +1,14 @@
 class Header {
+    handlerOpenShoppingPage() {
+        shoppingPage.render();
+    }
+
     render() {
         const products = localStorageUtil.getProducts();
         const productsAmount = products.length;
         const html = `
             <div class="header-container">
-                <div class="header-counter">🔥 ${productsAmount}</div> 
+                <div class="header-counter" onclick="headerPage.handlerOpenShoppingPage()">🔥 ${productsAmount}</div> 
             </div>
         `;
 

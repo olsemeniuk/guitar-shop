@@ -1,12 +1,12 @@
 class Products {
     constructor() {
-        this.activeButtonClass = 'products-element__btn--active';
-        this.addText = 'Add to cart';
-        this.removeText = 'Remove from cart';
+        this.activeButtonClass = "products-element__btn--active";
+        this.addText = "Add to cart";
+        this.removeText = "Remove from cart";
     }
 
     handleSetLocationStorage(elem, id) {
-        const { pushProduct, products } = localStorageUtil.putProducts(id);
+        const {pushProduct, products} = localStorageUtil.putProducts(id);
         if (pushProduct) {
             elem.classList.add(this.activeButtonClass);
             elem.textContent = this.removeText;
@@ -19,16 +19,16 @@ class Products {
 
     render() {
         const productsStore = localStorageUtil.getProducts();
-        let htmlCatalog = '';
-        CATALOG.forEach(({ id, name, price, img }) => {
+        let htmlCatalog = "";
+        CATALOG.forEach(({id, name, price, img}) => {
             const buttonText = productsStore.includes(id) ? this.removeText : this.addText;
             const activeClass = productsStore.includes(id) ? ` ${this.activeButtonClass}` : '';
 
             htmlCatalog += `
                 <li class="products-element">
                     <b class="products-element__name">${name}</b> 
-                    <img class="products-element__img" src=${img} alt="">
-                    <i class="products-element__price">⚡️ ${price.toLocaleString('ru')} USD</i>
+                    <img class="products-element__img" src="${img}" alt="">
+                    <i class="products-element__price">⚡️ ${price.toLocaleString("ru")} USD</i>
                     <button 
                         class="products-element__btn${activeClass}" 
                         type="button" 
