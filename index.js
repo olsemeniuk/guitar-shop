@@ -5,9 +5,10 @@ function render() {
 
 let catalog = [];
 
-fetch("db.json")
+fetch("https://my-json-server.typicode.com/olsemeniuk/guitar-shop")
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         catalog = data;
         render();
     })
