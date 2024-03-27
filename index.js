@@ -4,6 +4,7 @@ function render() {
 }
 
 let catalog = [];
+spinnerPage.render();
 
 const response = fetch(URL, {
     method: "GET",
@@ -19,4 +20,5 @@ response
         catalog = data.record;
         render();
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
+    .finally(spinnerPage.handleClear)
