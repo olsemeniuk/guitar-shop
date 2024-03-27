@@ -27,3 +27,5 @@ class LocalStorageUtil {
         return { pushProduct, products };
     }
 }
+
+const localStorageUtil = new LocalStorageUtil();
