@@ -5,12 +5,18 @@ function render() {
 
 let catalog = [];
 
-fetch("https://my-json-server.typicode.com/olsemeniuk/guitar-shop")
-    .then(response => response.json())
+const response = fetch(URL, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": MASTER_KEY
+    }
+});
+
+response
+    .then(result => result.json())
     .then(data => {
-        console.log(data)
-        catalog = data;
+        catalog = data.record;
         render();
     })
     .catch(error => console.log(error));
-
