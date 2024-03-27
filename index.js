@@ -5,7 +5,7 @@ function render() {
 
 let catalog = [];
 
-fetch("server/db.json")
+fetch("db.json")
     .then(response => response.json())
     .then(data => {
         catalog = data;
