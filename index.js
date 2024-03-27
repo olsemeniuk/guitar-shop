@@ -18,7 +18,10 @@ response
     .then(result => result.json())
     .then(data => {
         catalog = data.record;
+        if (!catalog) throw new Error;
         render();
     })
-    .catch(error => console.log(error))
-    .finally(spinnerPage.handleClear)
+    .catch(error => {
+        errorPage.render();
+    })
+    .finally(spinnerPage.handleClear);
