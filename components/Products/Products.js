@@ -20,7 +20,7 @@ class Products {
     render() {
         const productsStore = localStorageUtil.getProducts();
         let htmlCatalog = "";
-        CATALOG.forEach(({id, name, price, img}) => {
+        catalog.forEach(({id, name, price, img}) => {
             const buttonText = productsStore.includes(id) ? this.removeText : this.addText;
             const activeClass = productsStore.includes(id) ? ` ${this.activeButtonClass}` : '';
 
@@ -45,4 +45,3 @@ class Products {
 }
 
 const productsPage = new Products();
-productsPage.render();

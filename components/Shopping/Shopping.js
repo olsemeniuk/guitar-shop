@@ -8,7 +8,7 @@ class Shopping {
         let htmlCatalog = "";
         let total = 0;
 
-        CATALOG.forEach(({id, name, price}) => {
+        catalog.forEach(({id, name, price}) => {
             if (productsStore.includes(id)) {
                 htmlCatalog += `
                     <tr class="shopping-element">
