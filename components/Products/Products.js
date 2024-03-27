@@ -6,7 +6,7 @@ class Products {
     }
 
     handleSetLocationStorage(elem, id) {
-        const { pushProduct, ...rest } = localStorageUtil.putProducts(id);
+        const { pushProduct, products } = localStorageUtil.putProducts(id);
         if (pushProduct) {
             elem.classList.add(this.activeButtonClass);
             elem.textContent = this.removeText;
@@ -14,6 +14,7 @@ class Products {
             elem.classList.remove(this.activeButtonClass);
             elem.textContent = this.addText;
         }
+        headerPage.refreshProductsAmount(products.length)
     }
 
     render() {
